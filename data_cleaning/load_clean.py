@@ -1,6 +1,6 @@
 import pandas as pd
 
-class Clean:
+class DataCleaning:
     def __init__(self, data_path: str):
         self.data = pd.read_csv(data_path)
         self.clean_save_path = "data/Employee_dataset_cleaned.csv"

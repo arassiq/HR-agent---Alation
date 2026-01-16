@@ -4,9 +4,16 @@
 ### load_clean.py
 - Building the data loading pipeline was straightforward, earlier refresher of pandas was extremeley useful
 - Because I want to take this project a bit further, I want to make sure to properly compartmentalize all my functions
+- While this isn't a ML problem, I am worried about how many entries we lost when de duping on email
 - I had originally tried a vectorized way to change phone numbers before I realized I had to use .apply() which loops over all the data in the file
 - Had to look up the correct syntax for splitting Department_Region, had forgotten to add the .str. and therefore string methods were not working
     - Had also forgotten to add expand leading to data to be saved as array and not a column
 - Returning cleaned CSV path for later use with finding correct data
 
 ### exploratory_analysis.py
+- I want to eventually cluster to learn more about what's affecting performance score, I will have to do more research as it's been a while since i used k-means, but I think it could be insightful
+- I ran into some problems when trying to derive the dtype of each column to seperate where we perform mean, median, etc., as well as problems when it came to outputting and formatting the outputs of each statistic in a clean way
+- I tried to implement a sorted() portion to output values by uniqueness to show categorical variables last, yet, realized it would have been inneficient at runtime, as there were too many loops when outputted, and if this tool was scaled up to a larger dataset, there would be performance issues
+- Had to give myself a quick refresher on how to aggregate in pandas for the calculated aggregates. Also searched on how to change the angle of x labels
+- Because there is clear order between poor, average, good, excellent, I changed these to ordinal to use within a bar chart
+- To be honest, I'm a bit nervous for using two bar charts, but due to the lack of time series data, I think this is the best choice, and the cleanest way to output our data
