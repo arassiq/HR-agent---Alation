@@ -10,10 +10,16 @@
     - Had also forgotten to add expand leading to data to be saved as array and not a column
 - Returning cleaned CSV path for later use with finding correct data
 
-### exploratory_analysis.py
+## 2. exploratory_analysis
+### eda.py
 - I want to eventually cluster to learn more about what's affecting performance score, I will have to do more research as it's been a while since i used k-means, but I think it could be insightful
 - I ran into some problems when trying to derive the dtype of each column to seperate where we perform mean, median, etc., as well as problems when it came to outputting and formatting the outputs of each statistic in a clean way
 - I tried to implement a sorted() portion to output values by uniqueness to show categorical variables last, yet, realized it would have been inneficient at runtime, as there were too many loops when outputted, and if this tool was scaled up to a larger dataset, there would be performance issues
 - Had to give myself a quick refresher on how to aggregate in pandas for the calculated aggregates. Also searched on how to change the angle of x labels
 - Because there is clear order between poor, average, good, excellent, I changed these to ordinal to use within a bar chart
 - To be honest, I'm a bit nervous for using two bar charts, but due to the lack of time series data, I think this is the best choice, and the cleanest way to output our data
+### clustering.py
+- Looking to use KMeans to find a deeper understanding ofrelation between employee details and performance metrics
+- Making sure to only use descriptive features: performance, Salary, date joined, remote work, yet scared about whether we have enough data to be descriptive enough
+- Had to figure out how to turn date_joined to tenure, forgot datetime library methods, I feel this would be extremely important in performance to look for performance drop off over time
+- Dissapointed to see that there is no clear elbow, yet change does slow down at 4 clusters
