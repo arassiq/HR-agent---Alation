@@ -21,15 +21,15 @@ Descriptive statistics were calculated for all columns. Numeric variables were s
 
 ## 2. Calculated Statistics
 
-![Total Salary per Department](Figure_1.png)
+![Total Salary per Department](imgs/Figure_1.png)
 
 Figure 1: Admin and Finance account for the largest share of total salary, while HR has the lowest total salary. These differences are a result of both compensation levels and department size.
 
-![Performance by Department](Figure_2.png)
+![Performance by Department](imgs/Figure_2.png)
 
 Figure 2: Performance scores were converted to ordinal values for visualization ranging from 1: poor, to 4: excellent. After finding the mean to find the average performance per department, I found that Admin and Finance have the highest average performance scores, while Sales has the lowest.
 
-![Count of Employee by Region](Figure_3.png)
+![Count of Employee by Region](imgs/Figure_3.png)
 
 Figure 3: Employee counts are uneven across regions. Nevada and California have the highest number of employees, while Texas has the fewest suggesting that the workforce is concentrated in a small number of regions.
 
