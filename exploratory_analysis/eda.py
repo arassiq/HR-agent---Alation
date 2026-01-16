@@ -7,18 +7,32 @@ class ExploratoryAnalysis:
 
     def preliminary_statistics(self):
         total_rows = len(self.data) #storing total rows for use in the uniqueness ratio, do not want to keep re-calculating
+        #creating dataframe to ourput our statistics with
+        out_df = pd.DataFrame(columns=["Uniqueness_Count", "Uniqueness_Ratio", "Mean", "Median", "Standard_Deviation"])
+        
         for col in self.data:
             #only calculating numerical metrics on float and int column types
             if "int" in str(self.data[col].dtype) or "float" in str(self.data[col].dtype):
                 unique_count = self.data[col].nunique() 
-
-                print(f"{col}: \n\tmean: {round(self.data[col].mean(), 2)}, \n\tmedian: {self.data[col].median()}, \n\tstandard deviation: {round(self.data[col].std(),2)}, \n\tunique_count: {unique_count}, \n\tuniqueness ratio: {unique_count/total_rows}")
+                out_df.loc[col] = {
+                    "Uniqueness_Count": unique_count,
+                    "Uniqueness_Ratio": unique_count / total_rows,
+                    "Mean": round(self.data[col].mean(), 2),
+                    "Median": self.data[col].median(),
+                    "Standard_Deviation": round(self.data[col].std(), 2)
+                }
 
             else:
                 #metrics for non-numerical data types
                 unique_count = self.data[col].nunique()
-                
-                print(f"{col}: \n\tunique_count: {unique_count}, \n\tuniqueness ratio: {unique_count/total_rows}")
+                out_df.loc[col] = {
+                    "Uniqueness_Count": unique_count,
+                    "Uniqueness_Ratio": unique_count / total_rows,
+                    #"Mean": None,
+                    #"Median": None,
+                    #"Standard_Deviation": None
+                }
+        return out_df
 
 
 

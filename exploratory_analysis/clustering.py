@@ -44,16 +44,16 @@ class KMClustering:
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(X)
 
+        #self.inertia_viz(X_scaled)
+
+        #initializing the KMeans model and fitting onto our data with a cluster size of 4
         model = KMeans(n_clusters=4, n_init=10, random_state=42)
         clusters = model.fit_predict(X_scaled)
 
+        #aggregation of clusters into dataframe for clean output 
         df_clustered = self.data.loc[X.index].copy()
         df_clustered["cluster"] = clusters
 
-        print(df_clustered.groupby("cluster")[["Performance_Ordinal", "Remote_Work", "Salary", "Tenure_Years"]].mean())
+        df_clustered = df_clustered.groupby("cluster")[["Performance_Ordinal", "Remote_Work", "Salary", "Tenure_Years"]].mean()
         
-
-
-km_clustering = KMClustering()
-
-km_clustering.cluster()
+        return df_clustered
