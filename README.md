@@ -2,7 +2,26 @@
 
 This file documents how to run the project and where to find the results that were generated.
 
-## How to Run the Project
+## Submission Artifacts
+
+This repository contains all required submission artifacts:
+
+1. *Instructions on how to run the project, how to run the agent* 
+   - See `submission_artifacts/how_to_run.md` (How to Run section)
+
+2. *Cleaned output data from Part 1*  
+   - `submission_artifacts/cleaned_hr_data.csv`
+
+3. *Output from Part 1 EDA tasks*  
+   - `submission_artifacts/part1_results.md`
+
+4. *Output from Part 2 questions*  
+   - Included in `submission_artifacts/part2_results.md`
+
+5. *Demo video*  
+   - Provided in submission email
+
+## How to Run the Project (main pipeline)
 
 Clone and enter the repository:
 
@@ -62,15 +81,8 @@ This script:
 
 ## Outputs and Analysis
 
-For personal results, read the following files:
-
-- `HR-agent---Alation/reports/agent_results.md`
-  - Results and outputs returned by the agent
-
-- `HR-agent---Alation/reports/eda_results.md`
-  - EDA tables, plots, and high-level observations
+For personal results, read the following file:
 
 - `HR-agent---Alation/reports/thought_process.md`
   - Notes on design decisions and the overall approach used to build the pipeline
 
-These files together document both the analysis results and the reasoning behind the implementation.
